@@ -49,10 +49,7 @@ namespace StudentsDiary
         {
             
             if (cobViewGroup.SelectedIndex > 0)// Jeśli wybrano coś innego niż "wszystkich klas"
-            {
-                string selectedGroup = cobViewGroup.SelectedItem.ToString();
-                dgvDiary.DataSource = students.Where(x => x.Group == selectedGroup).ToList();
-            }
+                dgvDiary.DataSource = students.Where(x => x.Group == cobViewGroup.SelectedItem.ToString()).ToList();
             else // Jeśli wybrano "wszystkich klas"
                 dgvDiary.DataSource = students; 
         }
